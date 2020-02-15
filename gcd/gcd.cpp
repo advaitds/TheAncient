@@ -3,7 +3,7 @@
  * Program to calculate the greatest common divisor of 
  * two given numbers using two methods - 
  * 1) Euclidean method of long division
- * 2) Binary algorithm, which uses mainly divsion and subtraction by 2
+ * 2) Binary algorithm, uses mainly divsion and subtraction by 2
  * 
 */
 
@@ -29,6 +29,12 @@ int main()
 	// put the result out
 	std::cout << "GCD(" << a << " , " << b << ") = " << g << '\n';
 	
+	// 2. Binary method
+	std::cout << "Binary method: " << '\n';
+	g = gcd_binary(a, b);
+	
+	// put the result out
+	std::cout << "GCD(" << a << " , " << b << ") = " << g << '\n';
 	
 	return 0;
 }
