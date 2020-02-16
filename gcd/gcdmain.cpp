@@ -15,26 +15,26 @@ int main()
 {
     int a, b;
     int g = 0;
-	
+
     std::string outstr{""};
-	
-	// Get the two integers
-	std::cout << "Enter two integers" << '\n';
-	std::cin >> a >> b;
-	
-	// 1. Euclidean method
+
+    // Get the two integers
+    std::cout << "Enter two integers" << '\n';
+    std::cin >> a >> b;
+
+    // 1. Euclidean method
     g = gcd_euclid(a, b);
-	
-	// put the result out
-	std::cout << "\nEuclidean method: ";
-	std::cout << "GCD(" << a << " , " << b << ") = " << g << '\n';
-	
-	// 2. Binary method
-	g = gcd_binary(a, b);
-	
-	// put the result out
-	std::cout << "\nBinary method: ";
-	std::cout << "GCD(" << a << " , " << b << ") = " << g << '\n';
-	
-	return 0;
+
+    // put the result out
+    std::cout << "\nEuclidean method: ";
+    std::cout << "GCD(" << a << " , " << b << ") = " << g << '\n';
+
+    // 2. Binary method
+    g = gcd_binary(a, b);
+
+    // put the result out
+    std::cout << "\nBinary method: ";
+    std::cout << "GCD(" << a << " , " << b << ") = " << g << '\n';
+
+    return 0;
 }
