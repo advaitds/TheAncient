@@ -5,7 +5,7 @@
 
 int max(int a, int b)
 {
-	int m = (a > b) ? a : b;
+    int m = (a > b) ? a : b;
 	return m;
 }
 
