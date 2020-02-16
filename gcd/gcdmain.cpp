@@ -13,17 +13,17 @@
 
 int main()
 {
-	int a, b;
-	int g = 0;
+    int a, b;
+    int g = 0;
 	
-	std::string outstr{""};
+    std::string outstr{""};
 	
 	// Get the two integers
 	std::cout << "Enter two integers" << '\n';
 	std::cin >> a >> b;
 	
 	// 1. Euclidean method
-	g = gcd_euclid(a, b);
+    g = gcd_euclid(a, b);
 	
 	// put the result out
 	std::cout << "\nEuclidean method: ";

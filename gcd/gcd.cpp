@@ -6,7 +6,7 @@
 int max(int a, int b)
 {
     int m = (a > b) ? a : b;
-	return m;
+    return m;
 }
 
 int min(int a, int b)
@@ -18,7 +18,7 @@ int min(int a, int b)
 
 int gcd_binary(int a, int b)
 {
-	int c, d = 0;
+    int c, d = 0;
 	
 	if(a == b)
 		return a;
