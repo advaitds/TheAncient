@@ -9,6 +9,7 @@
 int main()
 {
     float a[R][C], b[R][C];
+    float d[R][C];
     int nRows, nColumns;
     int val;
     
@@ -21,32 +22,38 @@ int main()
         return 0;
     }
     
-	
+
     // Get the matrices
     std::cout << "Enter the first matrix: \n";
-    val = ReadMatrix(a, nRows, nColumns);
-    std::cout << "Val = " << val << '\n';
+    val = ReadMatrix(a, nRows, nColumns); 
     if(val == 0)
     {
-        std::cout << "Invalid values entered\n Terminating";
+        std::cout << "Invalid values entered\nTerminating";
         return 0;
     }
-    
-    std::cout << "You entered: \n";
-    PrintMatrix(a, nRows, nColumns);
-    
+
     std::cout << "Enter the second matrix: \n";
-    if(ReadMatrix(a, nRows, nColumns) == 0)
+    val = ReadMatrix(b, nRows, nColumns);
+    if(val == 0)
+    {
+        std::cout << "Invalid values entered\nTerminating";
         return 0;
+    }
         
     // Addition
+    Add(a, b, d, nRows, nColumns, '+');
+    std::cout << "Sum: \n";
+    PrintMatrix(d, nRows, nColumns);
     
     // Subtraction 
-    
-    // Multiplication 
-    
-    // Transpose
-    
-	
+    Add(a, b, d, nRows, nColumns, '-');
+    std::cout << "Difference: \n";
+    PrintMatrix(d, nRows, nColumns);
+        
+    // Multiplication
+    Multiply(a, b, d, nRows, nColumns);
+    std::cout << "Product \n";
+    PrintMatrix(d, nRows, nColumns);
+        
     return 0;
 }
