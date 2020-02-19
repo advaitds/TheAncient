@@ -23,8 +23,8 @@ long int ExtractNumber(std::string str)
         int base, power;
         
         // The user gave the input in power form
-        std::string left = str.substr(0, index); //str[0,index-1];
-        std::string right = str.substr(index+1, str.length()-1); //str[index+1:str.length()-1];
+        std::string left = str.substr(0, index);
+        std::string right = str.substr(index+1, str.length()-1);
         
         // convert them to numbers 
         base = std::stoi(left);
