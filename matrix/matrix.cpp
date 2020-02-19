@@ -59,6 +59,8 @@ void PrintMatrix(float p[R][C], int nRows, int nColumns)
 void Add(float a[R][C], float b[R][C], float d[R][C], 
         int nRows, int nColumns, char op = '+')
 {
+    // optional argument used to subtraction
+    // when '-' is specified for op. 
     for(int ii=0; ii<nRows; ii++)
     {
         for(int jj=0; jj<nColumns; jj++)
