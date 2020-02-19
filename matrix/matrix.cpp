@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cctype>
-#include <string>
 #include "matrix.h"
 
 bool IsValidInput(std::string str)
@@ -19,6 +18,13 @@ bool IsValidInput(std::string str)
 int ReadMatrix(float a[R][C], int nRows, int nColumns)
 {
     std::string inp;
+    /* input is taken in the form or a string
+     * because if a simple 'float inp;' is used, 
+     * the extraction from cin automatically casts
+     * the input value to float, removing the invalid characters. 
+     * This makes the isalpha() and such functions fail to detect 
+     * invalid inputs. 
+    */
     for(int ii =0; ii <nRows; ii++)
     {
         for(int jj=0; jj<nColumns; jj++)
