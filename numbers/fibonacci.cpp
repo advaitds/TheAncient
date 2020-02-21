@@ -1,5 +1,5 @@
 /*
- * Generate Fibonacci series upto a given maximum value
+ * Generate Fibonacci sequence upto a given maximum value
 */
 
 # include <iostream>
