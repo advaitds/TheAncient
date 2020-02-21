@@ -3,6 +3,7 @@
 */
 
 # include <iostream>
+#define CPR 8 // columns per row
 
 int main()
 {
@@ -23,7 +24,7 @@ int main()
         std::cout << f3;
         nprinted++;
         
-        if(nprinted % 8 == 0)
+        if(nprinted % CPR == 0)
             std::cout << '\n';
         else
             std::cout << '\t';
