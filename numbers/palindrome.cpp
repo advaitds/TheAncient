@@ -56,7 +56,7 @@ int main()
     numc = num; // just a copy
     while(num!=0)
     {
-        // get the last digit and it to the sum
+        // get the last digit and add it to the sum
         rm = num%10;
         sum += rm;
         
