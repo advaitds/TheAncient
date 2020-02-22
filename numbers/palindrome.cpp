@@ -43,9 +43,8 @@ long int ExtractNumber(std::string str)
 int main()
 {
     std::string inpStr;
-    long int num, sum, rev, numc;
+    long int num, sum=0, rev=0, numc;
     int rm;
-    bool firstIter = true;
     
     // Get the number
     std::cout << "Enter an integer \n";
@@ -54,7 +53,6 @@ int main()
         
     std::cout << "\nThe integer entered: " << num << '\n';
     
-    sum = 0;
     numc = num; // just a copy
     while(num!=0)
     {
@@ -63,17 +61,10 @@ int main()
         sum += rm;
         
         // put the last digit in the reversed number
-        if(firstIter)
-            rev = rm;
-        else
-            rev = rev*10 + rm;
+        rev = rev*10 + rm;
         
         // strip the last digit
         num /= 10;
-        
-        // update boolean for first iteration
-        if(firstIter)
-            firstIter = false;
     }
     
     // put the results out
