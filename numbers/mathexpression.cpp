@@ -1,63 +1,77 @@
 /*
  * Evaluate a simple mathematical expression 
- * For example: 5 + 6 - 8/2
- * this should give 7 as the answer. 
- * No parenthesis are considered
+ * For example: 5 + 6 
+ * this should give 11 as the answer. 
+ * Interesting results - 
+ * 0 ^ 0 gives 1 
 */
 
 #include <iostream>
-#define nOp 10 // maximum number of operators
+#include <cmath>
+#include <typeinfo>
 
-float EvaluateExpression(std::string expr)
+#define MAXOP 10 // maximum number of operators 
+
+//char ops[] = {'^', '*', '/', '%', '+' , '-'};
+
+void PrintOutput(float a, float b, float res, char op)
 {
-    // loop for paranthesis
-    
-    
-    
-    // First see if there are any parenthesis 
-    do
+    std::cout << "\nThe operation you want is: ";
+    if(op == '%')
     {
-        int pIndices[2] = FindParanthesis(expr);
-        int sum = pIndices[0] + pIndices[1];
-        
-        
-        
-    }while(sum != -2)
-    
-    
-    
-    if(pIndices[0] != -1 && pIndices[1] != -1)
-    {
-        // there are paranthesis in this expression
-        // extract the expression within in the paranthesis
-        // and recall this function 
-        std::string subexpr = expr.substring(pIndices[0]+1, pIndices[1]-1);
-        float subvalue = EvaluateExpression(subexpr);
-        
-        // now the sub-paranthesis has been evaluated
-        
+        std::cout << static_cast<int>(a)
+                    << " " << op << " " 
+                    << static_cast<int>(b) 
+                    << " = " << res <<'\n';
+        std::cout << "\nAny float values entered are converted to integers \n";
     }
-}
-
-int* FindParanthesis(std::string expr)
-{
-    // look for '(' or '['. 
-    // if found, look for ')' or ']' and return the indices
-    
-    // if not found, return {-1, -1}
+    else
+        std::cout << a << " " << op << " " << b << " = " << res <<'\n';
 }
 
 
 int main()
 {
-    char ops[] = {'^', '*', '/', '%', '+' , '-'};
-    std::string inpStr;
     
-    std::cout << "Enter an expression \n";
-    std::cin << inpStr;
+    char op;
+    float a, b, res;
+        
+    //float result = EvaluateExpression(inpStr);
+    
+    std::cout << "Enter an operator you want to use: \n";
+    std::cin >> op;
+    
+    std::cout << "Enter the two numbers to be operated on: \n";
+    std::cin >> a >> b;
+
     
     
+    switch(op)
+    {
+        case '^':
+            PrintOutput(a, b, pow(a, b), op);
+            break;
+        case '*':
+            PrintOutput(a, b, a*b, op);
+            break;
+        case '/':
+            PrintOutput(a, b, a/b, op);
+            break;
+        case '%':
+        {
+            int a1 = static_cast<int>(a);
+            int b1 = static_cast<int>(b);
+            PrintOutput(a1, b1, a1%b1, op);
+            break;
+        }
+        case '+':
+            PrintOutput(a, b, a+b, op);
+            break;
+        case '-':
+            PrintOutput(a, b, a-b, op);
+            break;
+    }
     
-    std::cout << '\n';
+    
     return 0;
 }
