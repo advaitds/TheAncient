@@ -2,17 +2,13 @@
  * Evaluate a simple mathematical expression 
  * For example: 5 + 6 
  * this should give 11 as the answer. 
- * Interesting results - 
- * 0 ^ 0 gives 1 
+ * Interesting result - 
+ * pow(0,0) used for 0 ^ 0 gives 1 
 */
 
 #include <iostream>
 #include <cmath>
 #include <typeinfo>
-
-#define MAXOP 10 // maximum number of operators 
-
-//char ops[] = {'^', '*', '/', '%', '+' , '-'};
 
 void PrintOutput(float a, float b, float res, char op)
 {
@@ -32,10 +28,11 @@ void PrintOutput(float a, float b, float res, char op)
 
 int main()
 {
-    
     char op;
     float a, b, res;
-        
+    
+    // for later, a more general code: 
+    // std::string inpStr;
     //float result = EvaluateExpression(inpStr);
     
     std::cout << "Enter an operator you want to use: \n";
@@ -44,8 +41,6 @@ int main()
     std::cout << "Enter the two numbers to be operated on: \n";
     std::cin >> a >> b;
 
-    
-    
     switch(op)
     {
         case '^':
@@ -71,7 +66,6 @@ int main()
             PrintOutput(a, b, a-b, op);
             break;
     }
-    
     
     return 0;
 }
